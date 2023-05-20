@@ -1,1 +1,1 @@
-worker node ramal.js
+worker: node index.js
