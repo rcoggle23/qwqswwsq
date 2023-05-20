@@ -1,15 +1,15 @@
 module.exports = [
-  { ID: 1, name: "Nitro Classic", detay: "1 Ay", tagliozel: true, coin: 80600 },
-  { ID: 2, name: "Nitro Boostlu", detay: "1 Ay", tagliozel: true, coin: 125000 },
+  { ID: 1, name: "Vip", detay: "1 Ay", tagliozel: true, coin: 2500 },
+  { ID: 2, name: "Vip+", detay: "1 Ay", tagliozel: true, coin: 4000 },
 
-  { ID: 3, name: "Spotify Aylık", detay: "1 Ay", tagliozel: false, coin: 19200 },
-  { ID: 4, name: "Spotify Yıllık", detay: "1 Yıl", tagliozel: false, coin: 66500 },
+  { ID: 3, name: "Vip", detay: "2 Ay", tagliozel: false, coin: 6000 },
+  { ID: 4, name: "Vip+", detay: "2 Ay", tagliozel: false, coin: 9000 },
 
-  { ID: 5, name: "Exxen Aylık", detay: "1 Ay", tagliozel: false, coin: 19500 },
-  { ID: 6, name: "Exxen Yıllık", detay: "1 Yıl", tagliozel: false, coin: 78700 },
+  { ID: 5, name: "Yakında", detay: "1 Ay", tagliozel: false, coin: 19500 },
+  { ID: 6, name: "Yakında", detay: "1 Yıl", tagliozel: false, coin: 78700 },
 
-  { ID: 7, name: "Youtube Aylık", detay: "1 Ay", tagliozel: false, coin: 22400 },
-  { ID: 8, name: "Youtube Yıllık", detay: "1 Yıl", tagliozel: false, coin: 66500 },
+  { ID: 7, name: "Yakında", detay: "1 Ay", tagliozel: false, coin: 22400 },
+  { ID: 8, name: "Yakında", detay: "1 Yıl", tagliozel: false, coin: 66500 },
 
-  { ID: 9, name: "Netflix", detay: "1 Ay", tagliozel: false, coin: 24500 },
+  { ID: 9, name: "Yakında", detay: "1 Ay", tagliozel: false, coin: 24500 },
 ];

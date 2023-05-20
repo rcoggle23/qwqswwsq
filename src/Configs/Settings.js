@@ -57,13 +57,14 @@ module.exports = {
         Chat: "1108786472645046272"
     },
 
-    Rooms: {
-        Public: ['1108786409197813931']['1108786437798760468'], // Public Ses Kanallarının bulunduğu kategoriler
-        Gecersiz: ['1108786542513770638','1108786542513770638','1108786553423142923'] // Buraya girilen ses kanallarında (KATEGORI ID SI GIRME!) puan kazanılamayacak.
-        GecersizChat: ['1108786534804631675', '', ''] // Buraya girilen kanallarda bot sistemleri çalışmayacak. (Puan kazanma gibi...)
-    },
+  Rooms: {
+    Public: ["1108786409197813931", "1108786437798760468"], // Public Ses Kanallarının bulunduğu kategoriler
+    Gecersiz: ["1108786542513770638", "1108786542513770638", "1108786553423142923"], // Buraya girilen ses kanallarında (KATEGORI ID SI GIRME!) puan kazanılamayacak.
+    GecersizChat: ["1108786534804631675", "", ""], // Buraya girilen kanallarda bot sistemleri çalışmayacak. (Puan kazanma gibi...)
+  },
+    
 
-    Yetenekler: {
+  Yetenekler: {
         Yazilim: "",
         Muzisyen: "",
         Stream: "",
