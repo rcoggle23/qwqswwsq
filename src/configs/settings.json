@@ -2,7 +2,7 @@
   "token": "",
   "prefix": ["!"],
   "guildID": "1108785729015926814",
-  "mongoUrl": "",
+  "croxydb": "",
   "owners": ["768757288940208138","",""],
   "botDurum": "VDS SPONSOR ARANIR bıkış#0099",
   "botSes": "1108847296692637826",
