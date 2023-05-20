@@ -1,12 +1,12 @@
 {
   "token": "",
   "prefix": ["."],
-  "guildID": "981339432303071322",
-  "mongoUrl": "",  
-  "owners": [""],
+  "guildID": "1108785729015926814",
+  "mongoUrl": "mongodb+srv://dcbotu:fZfaotzp6R986vaG@cluster0sa.y0lonis.mongodb.net/?retryWrites=true&w=majority",  
+  "owners": ["768757288940208138"],
 
-  "botSes": "990682511229206650",
-  "botDurum": "",
+  "botSes": "1108847296692637826",
+  "botDurum": "VDS SPONSOR ARANIR bıkmış#0099",
   "registerPerm": "945760985694761039",
 
   
