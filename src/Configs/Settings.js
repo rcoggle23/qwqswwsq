@@ -9,7 +9,7 @@ module.exports = {
         { activity: true, type: "username", tag: "" }
     ],
 
-    Taglialim: true,
+    Taglialim: false,
     yasGerekli: true,
 
     Sunucuadi: "KARA TİLKİ #YAKINDA",
@@ -58,8 +58,8 @@ module.exports = {
     },
 
     Rooms: {
-        Public: ['1108786409197813931'], // Public Ses Kanallarının bulunduğu kategoriler
-        Gecersiz: [''], // Buraya girilen ses kanallarında (KATEGORI ID SI GIRME!) puan kazanılamayacak.
+        Public: ['1108786409197813931']['1108786437798760468'], // Public Ses Kanallarının bulunduğu kategoriler
+        Gecersiz: ['1108786542513770638'],['1108786542513770638'],['1108786553423142923'] // Buraya girilen ses kanallarında (KATEGORI ID SI GIRME!) puan kazanılamayacak.
         GecersizChat: ['', '', ''] // Buraya girilen kanallarda bot sistemleri çalışmayacak. (Puan kazanma gibi...)
     },
 
@@ -78,8 +78,8 @@ module.exports = {
     },
 
     Systems: {
-        Yetki: false, // Yetki sistemi buradan açılıp kapanır. (true / false),
-        Gorev: false,
-        Market: false
+        Yetki: true, // Yetki sistemi buradan açılıp kapanır. (true / false),
+        Gorev: true,
+        Market: true
     }
 };
