@@ -1,42 +1,27 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require("discord.js");
+const afk = require("../schemas/afk");
 const moment = require("moment");
-const afk = require('../schemas/afk.js');
-const embed = require('../utils/Embed.js');
 require("moment-duration-format");
-
-/**
- * @param { Message } message 
- */
-
+moment.locale("tr");
 module.exports = async (message) => {
-
-    if(message.author.bot || !message.guild) return;
-
-    let Embed = embed(message.author.username, message.author.avatarURL({ dynamic: true }), false);
-    let afkData = await afk.findOne({ guildID: message.guild.id, userID: message.author.id });
-
-    if(afkData) {
-
-        if(message.member.displayName.includes("[AFK]") && message.member.manageable) await message.member.setNickname(message.member.displayName.replace("[AFK]", ""));
-        message.channel.success(message, Embed.setDescription(`${message.member.toString()}, Başarıyla AFK modundan çıktın. Toplam **${moment.duration(Date.now() - afkData.date).format("d [gün,] H [saat,] m [dakika,] s [saniyedir]")}** AFK'dın`), { timeout: 6000 });
-        await afk.deleteOne({ guildID: message.guild.id, userID: message.author.id });
-    
-    };
-
-    let member = message.mentions.members.forEach(async member => {
-
-        let memberData = await afk.findOne({ guildID: message.guild.id, userID: member.id });
-        if(memberData) {
-
-            message.channel.send(Embed.setDescription(`${member.toString()} kullanıcısı ${memberData.reason == 'Belirtilmedi' ? '' : `\`${memberData.reason}\` nedeniyle,`} **${moment.duration(Date.now() - memberData.date).format("d [gün] H [saat], m [dakika] s [saniye]")}** önce afk oldu!`));
-
-        };
-
-    });
-
+  if (message.author.bot || !message.guild) return;
+  const data = await afk.findOne({ guildID: message.guild.id, userID: message.author.id });
+  const embed = new MessageEmbed().setColor(message.member.diplayHexColor).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true }));
+  if (data) {
+    const afkData = await afk.findOne({ guildID: message.guild.id, userID: message.author.id });
+    await afk.deleteOne({ guildID: message.guild.id, userID: message.author.id });
+    if (message.member.displayName.includes("[AFK]") && message.member.manageable) await message.member.setNickname(message.member.displayName.replace("[AFK]", ""));
+    message.lineReply(`Afk modundan çıktınız. **${moment.duration(Date.now() - afkData.date).format("d [gün] H [saat], m [dakika] s [saniye]")}** süredir AFK'ydınız.`).then((x) => x.delete({ timeout: 5000 }));
+  }
+  
+  const member = message.mentions.members.first();
+  if (!member) return;
+  const afkData = await afk.findOne({ guildID: message.guild.id, userID: member.user.id });
+  if (!afkData) return;
+  embed.setDescription(`${member.toString()} kullanıcısı, \`${afkData.reason}\` sebebiyle, **${moment.duration(Date.now() - afkData.date).format("d [gün] H [saat], m [dakika] s [saniye]")}** önce afk oldu!`);
+  message.channel.send(embed).then((x) => x.delete({ timeout: 10000 }));
 };
 
 module.exports.conf = {
-    name: 'AFK',
-    event: 'message'
+  name: "message",
 };

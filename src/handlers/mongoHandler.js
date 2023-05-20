@@ -1,11 +1,15 @@
 const mongoose = require("mongoose");
-const { MongoURL } = global.client.settings;
+const settings = require("../configs/settings.json");
 
-mongoose.connect(MongoURL, {
+mongoose.connect(settings.mongoUrl, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useFindAndModify: false,
 });
 
-mongoose.connection.on("connected", () => console.log("[DATABASE] Connected To Database"));
-mongoose.connection.on("error", () => console.error("[DATABASE] Failed To Connect Database"));
+mongoose.connection.on("connected", () => {
+  console.log("Database bağlantısı tamamlandı!");
+});
+mongoose.connection.on("error", () => {
+  console.error("[HATA] Database bağlantısı kurulamadı!");
+});

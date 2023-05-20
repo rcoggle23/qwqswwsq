@@ -1,9 +1,8 @@
 const { Schema, model } = require("mongoose");
 
-const voiceJoinedAt = Schema({
-    userID: { type: String, default: "" },
-    guildID: { type: String, default: "" },
-    date: Number,
+const schema = Schema({
+  userID: String,
+  date: Number,
 });
 
-module.exports = model("voiceJoinedAt", voiceJoinedAt);
+module.exports = model("voiceJoinedAt", schema);

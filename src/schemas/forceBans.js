@@ -1,9 +1,9 @@
 const { Schema, model } = require("mongoose");
 
-const forceBans = Schema({
+const schema = Schema({
   guildID: { type: String, default: "" },
   userID: { type: String, default: "" },
-  staffID: { type: String, default: "" }
+  staff: { type: String, default: "" }
 });
 
-module.exports = model("forceBans", forceBans);
+module.exports = model("forceBans", schema);

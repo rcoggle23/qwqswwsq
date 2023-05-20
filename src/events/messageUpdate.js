@@ -1,38 +1,24 @@
-const { Prefix } = global.client.settings;
-const { messageLog } = global.client.guildSettings.logs;
-const embed = require('../utils/Embed.js');
-
-/**
- * @param { Message } oldMessage 
- * @param { Message } newMessage 
- */
+const moment = require("moment");
+moment.locale("tr");
+const conf = require("../configs/sunucuayar.json");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = async (oldMessage, newMessage) => {
+  if (oldMessage.author.bot) return;
 
-    if(newMessage.author.bot) return;
-    if(oldMessage.content == newMessage.content) return;
-    if(newMessage.content.toLowerCase().startsWith(`${Prefix}eval`) || oldMessage.content.toLowerCase().startsWith(`${Prefix}sil`) || newMessage.content.toLowerCase().startsWith(`${Prefix}sil`)) return;
+  const channel = newMessage.guild.channels.cache.get(conf.messageLogChannel);
+  if (!channel) return;
+  const embed = new MessageEmbed()
+    .setAuthor(newMessage.member.displayName, newMessage.author.avatarURL({ dynamic: true }))
+    .setColor("RANDOM")
+    .setTitle(`${newMessage.channel.name} adlı kanalda bir mesaj düzenlendi!`)
+    .setDescription(`- ${oldMessage.content} \n+ ${newMessage.content}`)
+    .setFooter(`ID: ${newMessage.author.id} • ${moment().add(3, "hours").calendar()}`);
 
-    let Embed = embed('Mesaj Düzenlendi', newMessage.guild.iconURL({ dynamic: true }), false);
-    let channel = newMessage.guild.channels.cache.get(messageLog);
-
-    if(messageLog && channel && channel.type == 'text') channel.send(
-        Embed
-        .addFields(
-            { name: `Mesaj Sahibi`, value: newMessage.author.toString(), inline: true },
-            { name: `Kanal`, value: newMessage.channel.toString(), inline: true },
-            { name: `Mesaj ID`, value: `\`${newMessage.id}\``, inline: true },
-            { name: `Eski Mesaj`, value: `${oldMessage.content ? `\`${oldMessage.content}\`` : `*Sadece Resim*`}`, inline: true },
-            { name: `Yeni Mesaj`, value: `${newMessage.content ? `\`${newMessage.content}\`` : `*Sadece Resim*`}`, inline: true },
-        )
-        .setThumbnail(newMessage.author.avatarURL({ dynamic: true }))
-        .setImage(newMessage.attachments.first() ? newMessage.attachments.first().proxyURL : ``)
-        .setColor('YELLOW')
-    );
-
+  if (newMessage.attachments.first()) embed.setImage(newMessage.attachments.first().proxyURL);
+  channel.wsend(embed);
 };
 
 module.exports.conf = {
-    name: 'Message Update',
-    event: 'messageUpdate',
+  name: "messageUpdate",
 };
