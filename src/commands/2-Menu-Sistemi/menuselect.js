@@ -296,7 +296,7 @@ module.exports = {
       };
     
       if (menu.id == "renk") {
-        await menu.reply.think(true);
+        await menu.reply.think(false);
         if (!menu.clicker.member.roles.cache.get(conf.boosterRolu) && !menu.clicker.member.roles.cache.get(conf.ekipRolu))  return await menu.reply.edit("Rollerin güncellenirken bir sorun meydana geldi **(İsminde Sunucu Tag'ı Yoktur veya Boost basmamışsın)**");;
         await menu.reply.edit("Rollerin güncellendi!");
   
@@ -329,7 +329,7 @@ module.exports = {
         };
       };
       if (menu.id == "diger") {
-        await menu.reply.think(true);
+        await menu.reply.think(false);
         await menu.reply.edit("Rollerin güncellendi!");
         let add = [];
         let remove = [];
