@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const settings = require("../configs/settings.json");
 
-mongoose.connect(settings.croxydbUrl, {
+mongoose.connect(settings.croxydb, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useFindAndModify: false,
