@@ -24,7 +24,7 @@ readdirSync('./src/commands').filter(async dir => {
 });
 
 // Connecting To Client
-client.login(Token).then(() => console.log('[BOT] Connection started')).catch(() => {
+client.login(process.env.token).then(() => console.log('[BOT] Connection started')).catch(() => {
     console.log('[BOT] Failed to start connection, trying again');
     process.exit();
 });

@@ -10,9 +10,9 @@
 
         Prefix: ".",
         Token: "",
-        Owners: [],
+        Owners: [768757288940208138],
         OtherBots: [],
-        VoiceChannel: "",
+        VoiceChannel: "1108847296692637826",
         Activity: "LISTENING",
         Status: "idle",
         MongoURL: "",
@@ -24,9 +24,9 @@
     //Activity Messages
     client.statusMessages = [
 
-        "Only VorteX!",
-        "Created By VorteX!",
-        "discord.gg/MTNkXHnX3b"
+       
+        "KARA TİLKİ!",
+        "VDS SPONSOR ARANIR"
 
     ];
 
@@ -73,18 +73,18 @@
     client.guildSettings = {
 
         ///General
-        guildID: "",
+        guildID: "1108785729015926814",
         guildTags: [],
         guildDiscriminator: "",
         guildTeams: [],
-        meetRole: "",
+        meetRole: "1108786300435300496",
         meetChannel: "",
         nameTag: "",
         dmMessages: true,
         unAuthorizedMessages: true,
 
         ///Staffs
-        staffRoles: [],
+        staffRoles: [1108786300435300496],
         transporterSpears: [],
         registerSpears: [],
         staffGiver: "",
@@ -95,7 +95,7 @@
 
             ///Ban
             ban: {
-                staffs: [],
+                staffs: [1108786300435300496],
                 penalPoint: 40,
                 penalLimit: 5,
                 log: "",
@@ -105,7 +105,7 @@
 
             ///Jail
             jail: {
-                staffs: [],
+                staffs: [1108786300435300496],
                 jailRoles: [],
                 jailChannel: "",
                 penalPoint: 30,
@@ -115,7 +115,7 @@
 
             ///Chat Mute
             chatMute: {
-                staffs: [],
+                staffs: [1108786300435300496],
                 cmuteRoles: [],
                 penalPoint: 20,
                 penalLimit: 5,
@@ -124,7 +124,7 @@
 
             ///Voice Mute
             voiceMute: {
-                staffs: [],
+                staffs: [1108786300435300496],
                 vmuteRoles: [],
                 penalPoint: 20,
                 penalLimit: 5,
@@ -133,7 +133,7 @@
 
             ///Warn
             warn: {
-                staffs: [],
+                staffs: [1108786300435300496],
                 warnRoles: [{
                     warnCount: 1,
                     warnRole: "", 
