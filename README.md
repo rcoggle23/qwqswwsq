@@ -1,31 +1,18 @@
-# newseason-moderation
+# v12-Bots-Ekip
 
- Awoken ve ibidi tarafından imzalanmıştır. 
+# Proje Hakkında Bilgi
 
- En iyi şekilde geliştirilmiş bir moderasyon botu Discord'da Türk sunucuların severek kullanabileceği bir bot. Ayrıca bu botu hem public hem de ekip sunucularında kullanabilirsiniz.
+* Selam, github reposuna hoşgeldin. Bu repomda Eskiden v12 zamanında kullanmış olduğum botları tanıtacağım.
+* Bot Aslında Ozi Jaylene Ait Ama Biz Bota Setup Ekleyip Bir Kaç Değişiklik Yapmıştık .setup help komutunu meriaz arkadaşım yapmıştı
+* Botu Alıp Kullanmadan Önce Star Fork Atarsanız Böyle altyapıların daha fazlasını atarım
+* Botu Kurmak ve çalıştırmak için settings e girip mongo url token ve sunucu id girmeniz gerekli sunucuayar jsona 2 tane id gireceksiniz unregister bide taglı rolü
+  sonra npm i diyerek modülleri indirip node . diyerek çalıştıra bilirsiniz.
   
- ## Bot Tanıtım Videosu
-Akşama sizlerle :)
-    
-    
-# Neden Yayınlandı?
- Bir gün amaçsızca Github'da yer alan botlar inceledik ve dandik olduğunu fark ettik. Geliştirdiğimiz bot çoğu botlardan daha iyi olduğu için diğer kullanıcılara fayda olsun diye paylaşıldı. Yardımları için bizlere teşekkür edebilirsiniz.
-    
+# Botun Görselleri
+![image](https://cdn.discordapp.com/attachments/1006698954248966336/1026441278017257532/eski_v12_setup.png)
+![image](https://cdn.discordapp.com/attachments/1006698954248966336/1026441277702668358/v12_eski_setup1.png)
+![image](https://cdn.discordapp.com/attachments/1006698954248966336/1026441277329387561/v12_eski_setup2.png)
+![image](https://cdn.discordapp.com/attachments/1006698954248966336/1026441276964479026/ramalkur_eski_setup_v12.png)
+![image](https://cdn.discordapp.com/attachments/1006698954248966336/1026441276641509436/v12_eski_say.png)
+![image](https://cdn.discordapp.com/attachments/1006698954248966336/1026441702602448896/taglar.png)
 
-# Içerikler
- Buradan botun içerisinde olan tüm özellikleri görebilirsiniz. Buradaki özelliklerin yanında tik olanlar kullanılabilir durumda olanlar, olmayanlar ise yakın gelecekte gelecek olanlardır.
-
- - [x] **Yetkili Sistemi**
-   * Sunucuya giren bir kişiyi **erkek/kız** olarak kaydedebilirsin.
-     * `senkronize`, `puantop`, `tagaldır`, `yetkibaşlat`, `yetkim`
- - [x] **Kayıt Sistemi**
-   * Ses ve Mesaj istatistiğini gün gün saymak ve bunu hem yazı hemde tablo hâlinde yansıtır.
-     * `erkek`, `kız`, `isim`, `isimler`, `top` ve `vip` komutlarını deneyerek görebilirsin.
- - [x] **Görev Sistemi**
-   * Sunucuda bir rolün üstüne istediğiniz gibi görev oluşturabilirsin. Belirttiğiniz rol için belli bir süre veriyorsunuz ve belirttiğiniz mesaj ve ses aktifliğini o süre tamamlanana kadar o rolde olan herkes gerçekleştirmeye çalışıyor.
-     * Bu komutları deneyerek göremezsiniz. Fakat `görev` komutunu kullanarak aktif görevlerini görebilirsin.
- - [x] **Cezalandırma Sistemi (penal-system)**
-   * Tamamen kusursuz ve size oldukça detaylı bir bilgi veren bu sistem kullanışlı ve güzeldir :D
-     * `sicil`, `jail`, `mute`, `vmute`, `tempvoicemute`, `warn`, `ban`, `unmute`, `unmuteall`, `unmvoicemute`, `unvoicemuteall` ve `kick` komutlarını kullanarak görebilirsin.
- - [x] **Bilgilendirme Komutları**
-   * Kısacası help komutu, tüm komutların nasıl kullanıldığını rahatça oradan görebilirsin.
