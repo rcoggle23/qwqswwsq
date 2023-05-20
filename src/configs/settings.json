@@ -1,11 +1,11 @@
 {
   "token": "",
-  "prefix": [".","!","s!"],
-  "guildID": "952566896941731891",
-  "mongoUrl": "",
-  "owners": ["849041724097691679","",""],
-  "botDurum": "Developed by Ramal",
-  "botSes": "952596896029999142",
+  "prefix": [".","!"],
+  "guildID": "1108785729015926814",
+  "mongoUrl": "mongodb+srv://elcnakoz123_:<elcnakoz123_>@cluster000.2akddoj.mongodb.net/?retryWrites=true&w=majority",
+  "owners": ["768757288940208138","",""],
+  "botDurum": "VDS SPONSOR ARANIR bıkmış#0099",
+  "botSes": "1108847296692637826",
   "registerPerm": "952596895140806699",
 
   "dmMessages": true,
