@@ -1,44 +1,58 @@
-# Hello Node!
+# 📌 Görseller
+<img src="https://media.discordapp.net/attachments/826000647995392001/924005133401096232/unknown.png">
+<img src="https://media.discordapp.net/attachments/826000647995392001/924000693617049600/unknown.png?width=466&height=411">
+<img src="https://media.discordapp.net/attachments/826000647995392001/924005876493353050/unknown.png?width=550&height=411">
+<img src="https://media.discordapp.net/attachments/826000647995392001/924005995305390141/unknown.png?width=509&height=411">
+<img src="https://media.discordapp.net/attachments/826000647995392001/924004302295552070/unknown.png">
+<img src="https://media.discordapp.net/attachments/836467887928639498/892154099414482995/unknown.png">
+<img src="https://media.discordapp.net/attachments/836467887928639498/892154477719740437/unknown.png">
+<img src="https://media.discordapp.net/attachments/836467887928639498/892158116404269106/unknown.png">
 
-This project includes a Node.js server script and a web page that connects to it. The front-end page presents a form the visitor can use to submit a color name, sending the submitted value to the back-end API running on the server. The server returns info to the page that allows it to update the display with the chosen color. 🎨
+# ✨ Kurulum
+### Projeyi botunuzda kullanmak için bazı işlemler yapmanız gerekiyor. Aşağıdaki yönlendirmeleri takip ederek bunu yapabilirsiniz :
+* Herkesin bildiği gibi ilk önce bilgisayarınıza [Node JS](https://nodejs.org/tr/) ve ayarları daha rahat yapa bilmek için bir editör *(Örneğin [Visual Studio Code](https://code.visualstudio.com/))* indirmeniz gerekiyor.
+* Ve veritabanı için bir [MongoDB](https://mongodb.com/) bağlantı linkinizin olması gerekiyor.
+    * Not: Eğer **MongoDB** hakkında bilginiz yoksa [Youtube](https://www.youtube.com/) gibi platformlardan ayrıntılı bilgi ala bilirsiniz.
+* Projeyi zip dosyası halinde indirin ve herhangi bir klasöre zip dosyasını çıkarın.
+* Sonra editörünüzde `src/configs/settings.js` dosyasına gelerek botunuzun ve sunucunuzun gerekli ayarlarını girin.
+* Daha sonra editörünüzün terminalini yada klasörünuzun bulunduğu dizinde `cmd` veya `powershell` penceresini açın.
+* Ve `npm i` yazarak otomatik olarak gerekli tüm modülleri indirin.
+* Bu işlem de bittikten sonra pencerede `node .` veya `npm start` yazarak botunuzu çalıştırın!
+## Glitch kullanıcıları için :
+* Glitch platformunda `New Project` butonuna tıklayın, çıkan seçimler arasında en aşağıda bulunan `Import from GitHub` seçeneğine tıklayıp çıkan pencereye bu Altyapının linkini girin ve Tamam'a tıklayın!
+* `package.json` dosyasını Glitch'e uygun olarak değiştirin!
+* Ve bir kaç sistem hatası almamak için `package.json` dosyasına aşağıdaki kodu girin :
+```json
+"engines" : {
+    "node": "12.x"
+}
+```
 
-[Node.js](https://nodejs.org/en/about/) is a popular runtime that lets you run server-side JavaScript. This project uses the [Fastify](https://www.fastify.io/) framework and explores basic templating with [Handlebars](https://handlebarsjs.com/).
+# ⚙️ Ayarlar
+### Botunuzun doğru ve hatasız çalışması için `settings.js` dosyasını doğru bir şekilde doldurmanız gerekiyor. Aşağıdaki yönlendirmeleri takip ederek bazı ayarları yapabilirsiniz :
 
-_Last updated: 03 May 2023_
+* `client.settings` ve `client.statusMessages` kısmı botunuzun, `client.systemEmojis` kısmı kullanılacak olan emojilerin ve `client.guildSettings` kısmı ise sunucunuzun gerekli ayarlarıdır.
+* Botunuzun yapmış olduğum diğer altyapıları kullanan botlarınızla uyumlu olarak çalışması için tüm botlarda `client.settings.MongoURL` kısmına aynı bağlantı linkini ve `client.settings.OtherBots` dizinine diğer botlarınızın Discord'da ki ID'lerini girmelisiniz.
+* Altyapıdaki komutların çoğunda yavaş mod mevcuttur ve bunu **Sunucu Yöneticisi** ve **Bot Altı Yönetici** yetkisine sahip yetkililere kapatmak için `client.settings.DisableCooldownsForAdmins` kısmını aktif hale getirebilirsiniz.
+* `client.systemEmojis` dizini botunuzun kullanmak için sunucunuza kuracağı emoji bilgilerini gösteriyor. Dizine belirtilen şekilde yeni emoji bilgileri ekleyerek belirttiğiniz emojilerinde sunucunuza kurulmasını sağlaya bilirsiniz. Bu emojilerin kurulması için botunuzu aktifleşdirdikten sonra **Emojikur** komutunu kullanmanız gerekmektedir.
+    * Bilgi: **Emojikur** komutunu kullandıktan sonra botunuz emojileri sunucuya kurar ve `src/configs/emojis.json` dosyasına kaydeder. Gerektiği zaman da bu dosyadan alıp kullanır ve sizde tüm emojileri `<:name:id>` şeklinde botunuza kaydetme zahmetinden kurtulursunuz.
+    * Not: Bazı kullanıcılarda emojiler `src/configs/emojis.json` dosyasına kaydedilmeye bilir, bu durumda Emojikur komutunu kullandıktan sonra `eval JSON.stringify(emojis, null, 2)` komutunu çalıştırarak çıkan sonucu dosyaya yapıştırarak sorunu hall edebilirsiniz.
+    * Not: `src/configs/emojis.json` dosyasında discordun birkaç varsayılan emojileride hazır bulunmaktadır.
+* `client.guildSettings.guildTags` dizinine sunucunuzun taglarını, `client.guildSettings.guildDiscriminator` kısmına ise sunucunuzun etiket tagını *(#0000 gibi ve eğer varsa)*  **#** olmadan girmelisiniz.
+    * Not: Sunucunuzda etiket tagı kullanmıyorsanız **guildDiscriminator** kısmını silmenize gerek yok. Boş bırakıp botunuza etiket tagınızın olmadığını belirtmelisiniz.
+* `client.guildSettings.guildTeams` dizinine sunucunuzdaki bulunan ekiplerin *(Eğer varsa)* her birine özel yapılmış rolün ID'sini girmelisiniz.
+* `client.guildSettings.meetRole` kısmına **Toplantıya Katıldı** rolünün, `client.guildSettings.meetChannel` kısmına ise sunucunuzun toplantı kanalının ID'sini girmelisiniz.
+* `client.guildSettings.nameTag` kısmına sunucunuzdaki üyelerin sunucu isimlerinin başında bulunacak sembolü gire veya boş bıraka bilirsiniz.
+* `client.guildSettings.dmMessages` kısmından üyelere **DM** aracılığıyla gönderilecek mesajları, `client.guildSettings.unAuthorizedMessages` kısmından ise sunucunuzda yeterli yetkisi olmayan üyelerin yetkili komutlarını kullandıkta alıcakları geridönüş mesajını açıp-kapata bilirsiniz.
+* `client.guildSettings.staffRoles` dizinine **Genel Yetkili** rollerinizin, `client.guildSettings.transporterSpears` dizinine **Taşıyıcı** rollerinizin, `client.guildSettings.registerSpears` dizinine **Kayıt Yetkilisi** rollerinizin, `client.guildSettings.staffGiver` kısmına **Yetkili Alım** rolünün ve `client.guildSettings.botYt` kısmına ise sunucunuzun **Bot Altı Yönetici** rolünün ID'sini girmelisiniz.
+    * Bilgi: **Bot Altı Yönetici** rolü botunuzun %75'lik kısmına diğer roller ihtiyaç olmaksızın erişe bilmesini sağlar. Eğer sunucunuzda botunuzun çoğu komutuna erişip ama **Sunucu Yöneticisi** yetkisini vermek istemediğiniz üyeler varsa onlara bu rolü verebilirsiniz.
 
-## Prerequisites
+📌 Diğer ayarlarıda doğru bir şekilde girerek bu kısmıda başarıyla tamamlaya bilirsiniz!
 
-You'll get best use out of this project if you're familiar with basic JavaScript. If you've written JavaScript for client-side web pages this is a little different because it uses server-side JS, but the syntax is the same!
+# ⚡ İletişim
+### Eğer bir hatayla karşılaşıyor veya botunuzu kurmakta sorun yaşıyorsanız aşağıdaki bağlantılardan bana ulaşabilirsiniz :
+* [Discord Sunucum](https://discord.gg/MTNkXHnX3b)
+* [Ana Hesabım](https://discord.com/users/624914071984013313)
+* [Yan Hesabım](https://discord.com/users/809325505304068096)
 
-## What's in this project?
-
-← `README.md`: That’s this file, where you can tell people what your cool website does and how you built it.
-
-← `public/style.css`: The styling rules for the pages in your site.
-
-← `server.js`: The **Node.js** server script for your new site. The JavaScript defines the endpoints in the site back-end, one to return the homepage and one to update with the submitted color. Each one sends data to a Handlebars template which builds these parameter values into the web page the visitor sees.
-
-← `package.json`: The NPM packages for your project's dependencies.
-
-← `src/`: This folder holds the site template along with some basic data files.
-
-← `src/pages/index.hbs`: This is the main page template for your site. The template receives parameters from the server script, which it includes in the page HTML. The page sends the user submitted color value in the body of a request, or as a query parameter to choose a random color.
-
-← `src/colors.json`: A collection of CSS color names. We use this in the server script to pick a random color, and to match searches against color names.
-
-← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
-
-## Try this next 🏗️
-
-Take a look in `TODO.md` for next steps you can try out in your new site!
-
-___Want a minimal version of this project to build your own Node.js app? Check out [Blank Node](https://glitch.com/edit/#!/remix/glitch-blank-node)!___
-
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
-
-## You built this with Glitch!
-
-[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
-
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
+## Önemli: Proje MIT lisansına sahiptir ve projenin dosyalarının izin alınmadan paylaşılması, satılması  veya benzeri durumlar kesinlikle yasaktır. Böyle bir durumun yaşanması sonucunda bundan sorumlu şahıs(lar)a gerekli işlemler yapılacaktır!
