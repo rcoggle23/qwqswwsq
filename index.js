@@ -427,7 +427,7 @@ mongoose.connect(config.MongoDB, {
 });
 
 mongoose.connection.on("connected", () => {
-    client.login(config.Token).then(() => {
+    client.login(process.env.token).then(() => {
         loadCommands();
         loadEvents();
         inlineReply();
